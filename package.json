@@ -1,0 +1,12 @@
+{
+  "name": "even-gemini-agent",
+  "version": "1.0.0",
+  "description": "Backend Gemini per occhiali Even Realities G1/G2",
+  "private": true,
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
