@@ -11,6 +11,13 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
  *   Response: { "response": "<nota strutturata>" }
  */
 export default async function handler(req, res) {
+  // Preflight CORS: il WebView invia OPTIONS prima del POST (header
+    // Authorization + JSON). Deve ricevere 2xx, altrimenti il browser
+    // blocca la richiesta vera e propria.
+    if (req.method === "OPTIONS") {
+          return res.status(200).end();
+    }
+  
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
